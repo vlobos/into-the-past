@@ -1,2 +1,2 @@
-# into_the_past
+# into-the-past
 Historical Event Finder application
