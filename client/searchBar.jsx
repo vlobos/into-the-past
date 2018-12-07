@@ -6,11 +6,10 @@ class SearchBar extends React.Component {
   }
   render (){
     return (
-      <section className="search__bar">
-        <input id="search__input" type="search" name="keyword__search" placeholder="Type..."></input>
-
-        <button onClick={this.props.handleSearch}>o</button>
-      </section>
+      <header className="search__bar">
+        <input id="search__input" type="search" name="keyword__search" placeholder="Look into the past..."></input>
+        <button className="search__btn" onClick={this.props.handleSearch}></button>
+      </header>
     )
   }
 }

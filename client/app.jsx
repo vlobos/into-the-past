@@ -1,7 +1,9 @@
 import React from "react";
 import SearchBar from "./searchBar.jsx";
 import SearchResults from "./searchResults.jsx";
+import Footer from './footer.jsx';
 import axios from 'axios';
+import "./style.css"
 
 class App extends React.Component {
 
@@ -49,16 +51,17 @@ class App extends React.Component {
   render (){
     if(this.state.view === 'search'){
       return ( 
-        <div className="app__container__search">
-        <SearchBar handleSearch={this.handleSearch}/>
-      </div>
+        <main className="app__container__search">
+          <SearchBar handleSearch={this.handleSearch}/>
+        </main>
       )
     } else {
       return(
-        <div className="app__container__results">
+        <React.Fragment>
           <SearchBar handleSearch={this.handleSearch}/>
-          <SearchResults data={this.state.data} handlePageClick={this.handlePageClick} pages={this.state.pages}/>
-        </div>
+          <SearchResults data={this.state.data}/>
+          <Footer pages={this.state.pages} handlePageClick={this.handlePageClick}/>
+        </React.Fragment>
       ) 
     }
   }

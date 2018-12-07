@@ -1,5 +1,4 @@
 import React from "react";
-import ReactPaginate from 'react-paginate';
 
 class SearchResults extends React.Component {
   constructor(props){
@@ -9,27 +8,22 @@ class SearchResults extends React.Component {
 
     let events = this.props.data.map(function(event,index){
       return (
-        <div key={index}>
-          {event.date} <br/>
-          {event.description}
+        <div className="result__event" key={index}>
+          <div className="event__date">
+            {event.date}
+          </div>
+          <div className="event__desc">
+            {event.description}
+          </div>
         </div>
       )
     })
     return (
-      <section className="search__results">
-        <div>{events}</div>
-        <ReactPaginate previousLabel={"<<"}
-                        nextLabel={">>"}
-                        breakLabel={"..."}
-                        breakClassName={"break-me"}
-                        pageCount={this.props.pages}
-                        marginPagesDisplayed={2}
-                        pageRangeDisplayed={5}
-                        onPageChange={this.props.handlePageClick}
-                        containerClassName={"pagination"}
-                        subContainerClassName={"pages pagination"}
-                        activeClassName={"active"} />
-      </section>
+      <React.Fragment>
+        <main className="search__results">
+          <section>{events}</section>
+        </main> 
+      </React.Fragment>
     )
   }
 }
