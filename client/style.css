@@ -50,6 +50,11 @@ main.app__container__search {
   cursor: pointer;
 }
 
+.input__error{
+  font-size: 30px;
+  margin: 20px;
+}
+
 /*   RESULTS VIEW SEARCH BAR   */
 header {
   align-self: center;
