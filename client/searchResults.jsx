@@ -22,7 +22,7 @@ class SearchResults extends React.Component {
                         nextLabel={">>"}
                         breakLabel={"..."}
                         breakClassName={"break-me"}
-                        pageCount={10}
+                        pageCount={this.props.pages}
                         marginPagesDisplayed={2}
                         pageRangeDisplayed={5}
                         onPageChange={this.props.handlePageClick}
