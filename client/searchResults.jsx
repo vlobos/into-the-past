@@ -8,11 +8,11 @@ class SearchResults extends React.Component {
 
     let events = this.props.data.map(function(event,index){
       return (
-        <div className="result__event" key={index}>
-          <div className="event__date">
+        <div className="results__event" key={index}>
+          <div className="results__event__date">
             {event.date}
           </div>
-          <div className="event__desc">
+          <div className="results__event__desc">
             {event.description}
           </div>
         </div>
@@ -20,7 +20,7 @@ class SearchResults extends React.Component {
     })
     return (
       <React.Fragment>
-        <main className="search__results">
+        <main className="results">
           <section>{events}</section>
         </main> 
       </React.Fragment>
